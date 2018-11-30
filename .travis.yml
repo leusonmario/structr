@@ -1,10 +1,9 @@
 language: java
 jdk:
-  - oraclejdk7
-branches:
-  only:
-    - master
-    - develop
+  - oraclejdk8
+
+script:
+  - mvn clean cobertura:cobertura -Dtest=PageVisibilityTest#test -DfailIfNoTests=false
 cache:
   directories:
     - $HOME/.m2
